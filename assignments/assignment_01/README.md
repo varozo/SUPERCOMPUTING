@@ -2,8 +2,8 @@
 2. cd SUPERCOMPUTING
 3. mkdir assignments
 4. cd assignments/
-5. mkdir assignment_1
-6. cd assignment_1/
+5. mkdir assignment_01
+6. cd assignment_01/
 7. mkdir data
 8. mkdir scripts
 9. mkdir results
@@ -34,9 +34,9 @@
 
 `cd SUPERCOMPUTING` enter the SUPERCOMPUTING folder on my home directory in my local machine
 `mkdir assignments` create the folder for assignments, (mkdir means make directory)
-`cd assignments/` enter the ./assignments/ folder to create ./assignments/assignment_1
-`mkdir assignment_1` create assignment_1 folder inside assignments folder
-`cd assignment_1/` enter assignment_1 folder
+`cd assignments/` enter the ./assignments/ folder to create ./assignments/assignment_01
+`mkdir assignment_01` create assignment_01 folder inside assignments folder
+`cd assignment_01/` enter assignment_01 folder
 
 the following 6 lines create all of the folders given to us in the template to refer to
 `mkdir data`
@@ -51,7 +51,7 @@ go into the /data folder and create the two subdirectories
 `mkdir raw`
 `mkdir clean`
 
-go back to the assignment_1 folder that housed the data folder ('..' means go back to the parent directory)
+go back to the assignment_01 folder that housed the data folder ('..' means go back to the parent directory)
 `cd ..`
 
 create the assignment_1_essay.md and README.md markdown file ('touch' is to create a new & empty file if it doesnt already exist)
@@ -67,7 +67,7 @@ create all placeholder files inside each subdirectory using relative paths
 `touch config/config_placeholder.yaml`
 `touch logs/logfile.log`
 
-since this is all on my virtual directory, I then add, commit, push to the github repo so both are the updated repo with the assignments folder and its contents (just assignment_1 for now)
+since this is all on my virtual directory, I then add, commit, push to the github repo so both are the updated repo with the assignments folder and its contents (just assignment_01 for now)
 `cd ..` go to assignments folder
 `git add .` add all (.) file changes to this commit to push to the repo
 `git commit -m 'Draft'` I am labelling this commit as 'Draft' because I am revising my work after and will continue making changes to both README.md and assignment_1_essay until I finish but everything will remain the same above all the git commands

@@ -1,0 +1,8 @@
+#!/bin/bash
+set -ueo pipefail
+
+# count the lines of first argument to the script
+# and pipe STDOUT to cut to remove the filename output
+head -n 1 $1
+tail -n 1 $1
+# returns a number equal to the number of lines in a file

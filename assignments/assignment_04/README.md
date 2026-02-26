@@ -1,0 +1,74 @@
+# Task 2
+- In programs directory
+wget https://github.com/cli/cli/releases/download/v2.74.2/gh_2.74.2_linux_amd64.tar.gz
+tar -xzvf gh_2.74.2_linux_amd64.tar.gz 
+rm gh_2.74.2_linux_amd64.tar.gz 
+
+# Task 3
+nano install_gh.sh
+- Copy and paste all terminal commands in here
+
+# Task 4
+export PATH=$PATH:/sciclone/home/varozo/programs -> this is temporary!
+
+# Task 5
+- Already done
+
+# Task 6
+
+- Install seqtk using the introduction section of the github repo that was provided
+- Make sure you’re still in the programs directory
+git clone https://github.com/lh3/seqtk.git;
+cd seqtk; make
+
+- attach path to $PATH
+pwd
+echo "export PATH=$PATH:/sciclone/home/varozo/programs/seqtk" >> ~/.bashrc
+
+# Task 7
+seqtk telo -m TTTAGGG ~/SUPERCOMPUTING/assignments/assignment_03/data/GCF_000001735.4_TAIR10.1_genomic.fna > telo.bed 2> telo.count
+head telo.count
+
+# Task 8
+cd ..
+cd ..
+cd SUPERCOMPUTING/
+cd assignments/assignment_04
+nano summarize_fasta.sh
+- add stuff
+chmod +x summarize_fasta.sh 
+./summarize_fasta.sh ~/SUPERCOMPUTING/assignments/assignment_03/data/GCF_000001735.4_TAIR10.1_genomic.fna
+
+# Task 9
+mkdir data
+cd data/
+
+- navigate to https://ftp.ncbi.nlm.nih.gov/genbank/ on your browser
+- get 3 files and put in data directory
+wget https://ftp.ncbi.nlm.nih.gov/genbank/gbbct112.seq.gz
+wget https://ftp.ncbi.nlm.nih.gov/genbank/gbbct116.seq.gz
+wget https://ftp.ncbi.nlm.nih.gov/genbank/gbbct167.seq.gz
+
+gunzip gbbct112.seq.gz
+gunzip gbbct116.seq.gz 
+gunzip gbbct167.seq.gz 
+
+- from the github instructions README, learned how to convert to fasta (fa)?
+seqtk seq -a gbbct112.seq > gbbct112.fa
+seqtk seq -a gbbct116.seq > gbbct116.fa
+seqtk seq -a gbbct167.seq > gbbct167.fa
+cd ..
+
+for file in data/*.fa; do ./summarize_fasta.sh "$file"; done
+
+- create a .gitignore in assignment04 and add data/ to it
+nano .gitignore
+
+- git add, commit, push to repo
+
+#Task 10:
+
+### Reflection
+For assignment 4, I worked in my home’s programs directory (not within SUPERCOMPUTING), and cloned the seqtk repo inside so I could use it in my actual assigment_04. I then started working in that directory where I created the summarize_fasta.sh, created my script, and added executable permissions on it so I could call it on my assignment_03 data. I then downloaded the three sequence files, unzipped them, converted them, and ran a for loop on all three (on the command line) to get the summaries for each sequence. Lastly, I created a .gitignore file so my data wouldn’t be uploaded to my GitHub repo or I wouldnt face issues. I add/commit/pushed and finished up my reflection. So I worked in my home’s program directory (now also contains the seqtk repo, install_gh.sh (with unpacking commands for the tarball file that was also added), and in assignment_04 (contains a .gitignore, summarize_fasta.sh, and a data directory with three sequence fasta files)).
+
+During this lab, I had to navigate using seqtk commands and how to “get” certain values I needed from the files. I also ran into a challenge when I needed to download my three fasta files and they were in a different extension name, so I needed to convert it. But I took a look at the seqtk README on its GitHub and I think I got it. I was also confused about if I should’ve downloaded only one sequence at a time since the genbank only had single sequences as I came to realize after the program ran. I learned in this assignment, in working on Task 7, that seqtk has a built in command that allows you to search from anywhere in the hpc for a specific .fna file and count the number of times a specific pattern occurs (using telo). I also learned this week how to run scripts from anywhere in the hpc and how to complete for loops on the terminal in the proper syntax (with semicolons). $PATH is an environment variable and is a list of directories the shell looks through when typing a command on the terminal. It can be used to run programs from various locations without typing the full path like we used in this lab on assignment_03’s data file in Task 7. It can also be used to extend what directories the shell looks through by adding a colon and adding it to the .bashrc to ensure it isn’t temporary. In a broader view, using $PATH can also be used to combat installation and version inconsistancies that might arise with creating a replicable deliverable.

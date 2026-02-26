@@ -5,17 +5,17 @@
 
 ## Task 2
 - In programs directory:
-brew install gh
-wget https://github.com/cli/cli/releases/download/v2.74.2/gh_2.74.2_linux_amd64.tar.gz
-tar -xzvf gh_2.74.2_linux_amd64.tar.gz 
-rm gh_2.74.2_linux_amd64.tar.gz 
+`brew install gh`
+`wget https://github.com/cli/cli/releases/download/v2.74.2/gh_2.74.2_linux_amd64.tar.gz`
+`tar -xzvf gh_2.74.2_linux_amd64.tar.gz`
+`rm gh_2.74.2_linux_amd64.tar.gz`
 
 ## Task 3
-nano install_gh.sh
+`nano install_gh.sh`
 - Copy and paste all above terminal commands in here
 
 ## Task 4
-export PATH=$PATH:/sciclone/home/varozo/programs
+`export PATH=$PATH:/sciclone/home/varozo/programs`
 
 ## Task 5
 - Already done
@@ -23,50 +23,50 @@ export PATH=$PATH:/sciclone/home/varozo/programs
 ## Task 6
 - Install seqtk using the introduction section of the github repo that was provided
 - Make sure you’re still in the programs directory
-git clone https://github.com/lh3/seqtk.git;
-cd seqtk; make
+`git clone https://github.com/lh3/seqtk.git;`
+`cd seqtk; make`
 
 - Attach path to $PATH
-pwd
-echo "export PATH=$PATH:/sciclone/home/varozo/programs/seqtk" >> ~/.bashrc
+`pwd`
+`echo "export PATH=$PATH:/sciclone/home/varozo/programs/seqtk" >> ~/.bashrc`
 
 ## Task 7
 - Look at github repo
 - How many TTTAGGG in sequences:
-seqtk telo -m TTTAGGG ~/SUPERCOMPUTING/assignments/assignment_03/data/GCF_000001735.4_TAIR10.1_genomic.fna > telo.bed 2> telo.count
-head telo.count
+`seqtk telo -m TTTAGGG ~/SUPERCOMPUTING/assignments/assignment_03/data/GCF_000001735.4_TAIR10.1_genomic.fna > telo.bed 2> telo.count`
+`head telo.count`
 
 ## Task 8
 - Navigate to SUPERCOMPUTING assignment 4:
-cd ..
-cd ..
-cd SUPERCOMPUTING/
-cd assignments/assignment_04
-nano summarize_fasta.sh
+`cd ..`
+`cd ..`
+`cd SUPERCOMPUTING/`
+`cd assignments/assignment_04`
+`nano summarize_fasta.sh`
 - Add code to script & add executable permissions & run it on assignment 3 .fna data
-chmod +x summarize_fasta.sh 
-./summarize_fasta.sh ~/SUPERCOMPUTING/assignments/assignment_03/data/GCF_000001735.4_TAIR10.1_genomic.fna
+`chmod +x summarize_fasta.sh`
+`./summarize_fasta.sh ~/SUPERCOMPUTING/assignments/assignment_03/data/GCF_000001735.4_TAIR10.1_genomic.fna`
 
 ## Task 9
-mkdir data
-cd data/
+`mkdir data`
+`cd data/`
 
 - Navigate to https://ftp.ncbi.nlm.nih.gov/genbank/ on your browser
 - Get 3 files and put in data directory & unzip
-wget https://ftp.ncbi.nlm.nih.gov/genbank/gbbct112.seq.gz
-wget https://ftp.ncbi.nlm.nih.gov/genbank/gbbct116.seq.gz
-wget https://ftp.ncbi.nlm.nih.gov/genbank/gbbct167.seq.gz
-gunzip gbbct112.seq.gz
-gunzip gbbct116.seq.gz 
-gunzip gbbct167.seq.gz 
+`wget https://ftp.ncbi.nlm.nih.gov/genbank/gbbct112.seq.gz`
+`wget https://ftp.ncbi.nlm.nih.gov/genbank/gbbct116.seq.gz`
+`wget https://ftp.ncbi.nlm.nih.gov/genbank/gbbct167.seq.gz`
+`gunzip gbbct112.seq.gz`
+`gunzip gbbct116.seq.gz`
+`gunzip gbbct167.seq.gz`
 
 - From the github instructions README, learned how to convert to fasta (fa)
-seqtk seq -a gbbct112.seq > gbbct112.fa
-seqtk seq -a gbbct116.seq > gbbct116.fa
-seqtk seq -a gbbct167.seq > gbbct167.fa
-cd ..
+`seqtk seq -a gbbct112.seq > gbbct112.fa`
+`seqtk seq -a gbbct116.seq > gbbct116.fa`
+`seqtk seq -a gbbct167.seq > gbbct167.fa`
+`cd ..`
 
-for file in data/*.fa; do ./summarize_fasta.sh "$file"; done
+`for file in data/*.fa; do ./summarize_fasta.sh "$file"; done`
 
 - Create a .gitignore in assignment04 and add data/ to it
 nano .gitignore

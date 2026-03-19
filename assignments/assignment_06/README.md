@@ -20,7 +20,7 @@
 ## Task 3: 
 
 - Builds in programs directory, but this script is in assignment_06/scripts
-- NOTE: check out the latest update!
+- NOTE: check out the latest update! -> I will now use flye_2.9.6... for my 02 script names because that is the version I downloaded.
 - `nano flye_2.9.6_manual_build.sh` -> make it executable through: `chmod +x flye_2.9.6_manual_build.sh`
 - Add its location to path (temporary): `export PATH=$PATH:~/programs/Flye/bin`
 
